@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cafe Illusions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fbf4ea;
+  color:#2e2e2e;
+}
+
+/* ================= HEADER ================= */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:#fff;
+  box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+}
+.logo span{color:#c28b50}
+
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+  cursor:pointer;
+}
+
+/* ================= PAGES ================= */
+.page{
+  display:none;
+  padding:90px 20px;
+  min-height:calc(100vh - 70px);
+}
+
+.page.active{
+  display:block;
+}
+
+/* ================= COMMON ================= */
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:38px;
+  margin-bottom:30px;
+}
+
+.btn{
+  padding:12px 28px;
+  background:#c28b50;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+/* ================= HOME ================= */
+.hero{
+  text-align:center;
+  margin-top:60px;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+}
+
+.hero p{
+  margin:15px 0 30px;
+}
+
+/* ================= MENU ================= */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.menu-card{
+  background:#fff;
+  padding:25px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.menu-card span{
+  color:#c28b50;
+  font-weight:bold;
+}
+
+/* ================= GALLERY ================= */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  max-width:900px;
+  margin:auto;
+}
+
+.gallery div{
+  height:180px;
+  background:#e5d3b3;
+  border-radius:18px;
+}
+
+/* ================= FORM ================= */
+form{
+  max-width:400px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#2e2e2e;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="logo">Cafe <span>Illusions</span></div>
+  <nav>
+    <a onclick="openPage('home')">Home</a>
+    <a onclick="openPage('menu')">Menu</a>
+    <a onclick="openPage('about')">About</a>
+    <a onclick="openPage('franchise')">Franchise</a>
+    <a onclick="openPage('gallery')">Gallery</a>
+    <a onclick="openPage('reservation')">Reservation</a>
+    <a onclick="openPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= HOME ================= -->
+<section id="home" class="page active">
+  <div class="hero">
+    <h1>Where Coffee Meets Illusion</h1>
+    <p>Premium café experience with comfort & taste</p>
+    <button class="btn" onclick="openPage('menu')">Explore Menu</button>
+  </div>
+</section>
+
+<!-- ================= MENU ================= -->
+<section id="menu" class="page">
+  <h2 class="section-title">Our Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <h3>Cappuccino</h3>
+      <p>Rich & creamy coffee</p>
+      <span>₹180</span>
+    </div>
+    <div class="menu-card">
+      <h3>Veg Cheese Maggi</h3>
+      <p>Classic comfort food</p>
+      <span>₹150</span>
+    </div>
+    <div class="menu-card">
+      <h3>Cold Coffee</h3>
+      <p>Chilled & smooth</p>
+      <span>₹170</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="page">
+  <h2 class="section-title">About Us</h2>
+  <p style="text-align:center;max-width:700px;margin:auto">
+    Cafe Illusions is a modern café created for people who love quality coffee,
+    peaceful ambience and memorable conversations.
+  </p>
+</section>
+
+<!-- ================= FRANCHISE ================= -->
+<section id="franchise" class="page">
+  <h2 class="section-title">Franchise</h2>
+  <p style="text-align:center">
+    ✔ Low Investment &nbsp; ✔ High Returns &nbsp; ✔ Full Support
+  </p>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="page">
+  <h2 class="section-title">Gallery</h2>
+  <div class="gallery">
+    <div></div><div></div><div></div><div></div>
+  </div>
+</section>
+
+<!-- ================= RESERVATION ================= -->
+<section id="reservation" class="page">
+  <h2 class="section-title">Table Reservation</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="tel" placeholder="Mobile Number" required>
+    <input type="date" required>
+    <input type="time" required>
+    <button class="btn">Reserve Now</button>
+  </form>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="page">
+  <h2 class="section-title">Contact Us</h2>
+  <p style="text-align:center;line-height:2">
+    📍 Nagpur, Maharashtra <br>
+    📞 +91 9XXXXXXXXX <br>
+    ✉ cafeillusions@gmail.com
+  </p>
+</section>
+
+<footer>
+  © 2025 Cafe Illusions
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function openPage(pageId){
+  let pages = document.querySelectorAll('.page');
+  pages.forEach(page => page.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
